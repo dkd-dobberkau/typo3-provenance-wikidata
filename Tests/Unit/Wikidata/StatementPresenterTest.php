@@ -11,8 +11,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 final class StatementPresenterTest extends UnitTestCase
 {
-    protected bool $resetSingletonInstances = true;
-
     private FakeWikidata $wikidata;
 
     #[Test]

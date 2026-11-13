@@ -8,15 +8,13 @@ use CmsProvenance\ProvenanceWikidata\Wikidata\WikidataClient;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Core\Cache\Backend\TransientMemoryBackend;
-use TYPO3\CMS\Core\Cache\Frontend\VariableFrontend;
+use TYPO3\CMS\Core\Cache\Frontend\FrontendInterface;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Http\RequestFactory;
 
 /**
  * A WikidataClient whose HTTP requests get prepared answers instead of
- * reaching Wikidata. Tests using it set $resetSingletonInstances, because
- * the cache frontend creates a logger.
+ * reaching Wikidata, and whose cache is an array.
  */
 final class FakeWikidata
 {
@@ -51,6 +49,16 @@ final class FakeWikidata
             'timeout' => '5',
         ]);
 
-        return new WikidataClient($requestFactory, new VariableFrontend('test', new TransientMemoryBackend()), $extensionConfiguration);
+        // An array, because the constructors of TYPO3's cache backends differ between TYPO3 13 and 14.
+        $entries = [];
+        $cache = (fn() => $this->createStub(FrontendInterface::class))->call($test);
+        $cache->method('get')->willReturnCallback(static function (string $identifier) use (&$entries): mixed {
+            return $entries[$identifier] ?? false;
+        });
+        $cache->method('set')->willReturnCallback(static function (string $identifier, mixed $data) use (&$entries): void {
+            $entries[$identifier] = $data;
+        });
+
+        return new WikidataClient($requestFactory, $cache, $extensionConfiguration);
     }
 }

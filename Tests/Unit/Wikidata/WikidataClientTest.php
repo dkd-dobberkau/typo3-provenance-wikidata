@@ -15,9 +15,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 final class WikidataClientTest extends UnitTestCase
 {
-    // The cache frontend creates a logger through GeneralUtility.
-    protected bool $resetSingletonInstances = true;
-
     private FakeWikidata $wikidata;
 
     #[Test]
