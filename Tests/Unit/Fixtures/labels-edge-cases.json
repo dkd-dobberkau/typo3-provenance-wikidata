@@ -1,0 +1,71 @@
+{
+ "entities": {
+  "P571": {
+   "id": "P571",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "inception"
+    },
+    "de": {
+     "language": "de",
+     "value": "Gründung"
+    }
+   }
+  },
+  "P1436": {
+   "id": "P1436",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "collection or exhibition size"
+    }
+   }
+  },
+  "P2048": {
+   "id": "P2048",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "height"
+    }
+   }
+  },
+  "P1813": {
+   "id": "P1813",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "short name"
+    }
+   }
+  },
+  "P856": {
+   "id": "P856",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "official website"
+    }
+   }
+  },
+  "P1": {
+   "id": "P1",
+   "labels": {}
+  },
+  "Q2": {
+   "id": "Q2",
+   "labels": {}
+  },
+  "Q11573": {
+   "id": "Q11573",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "metre"
+    }
+   }
+  }
+ },
+ "success": 1
+}

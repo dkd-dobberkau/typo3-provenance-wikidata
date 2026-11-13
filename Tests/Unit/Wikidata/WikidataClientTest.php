@@ -10,11 +10,6 @@ use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\Attributes\Test;
-use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Core\Cache\Backend\TransientMemoryBackend;
-use TYPO3\CMS\Core\Cache\Frontend\VariableFrontend;
-use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
-use TYPO3\CMS\Core\Http\RequestFactory;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 final class WikidataClientTest extends UnitTestCase
@@ -22,8 +17,7 @@ final class WikidataClientTest extends UnitTestCase
     // The cache frontend creates a logger through GeneralUtility.
     protected bool $resetSingletonInstances = true;
 
-    /** @var list<array{uri: string, options: array<string, mixed>}> */
-    private array $requests = [];
+    private FakeWikidata $wikidata;
 
     #[Test]
     public function searchReturnsItemsWithUri(): void
@@ -36,8 +30,8 @@ final class WikidataClientTest extends UnitTestCase
             ['id' => 'Q636400', 'label' => 'Ashmolean Museum', 'description' => 'museum in Oxford, England, UK', 'uri' => 'http://www.wikidata.org/entity/Q636400'],
             $items[0],
         );
-        self::assertStringContainsString('action=wbsearchentities', $this->requests[0]['uri']);
-        self::assertStringContainsString('search=Ashmolean', $this->requests[0]['uri']);
+        self::assertStringContainsString('action=wbsearchentities', $this->wikidata->requests[0]['uri']);
+        self::assertStringContainsString('search=Ashmolean', $this->wikidata->requests[0]['uri']);
     }
 
     #[Test]
@@ -55,9 +49,9 @@ final class WikidataClientTest extends UnitTestCase
 
         self::assertSame(
             'provenance-wikidata/0.1 (https://github.com/dkd-dobberkau/typo3-provenance-wikidata)',
-            $this->requests[0]['options']['headers']['User-Agent'],
+            $this->wikidata->requests[0]['options']['headers']['User-Agent'],
         );
-        self::assertSame(5.0, $this->requests[0]['options']['timeout']);
+        self::assertSame(5.0, $this->wikidata->requests[0]['options']['timeout']);
     }
 
     #[Test]
@@ -68,7 +62,7 @@ final class WikidataClientTest extends UnitTestCase
         $client->searchItems('Ashmolean', 'en');
         $client->searchItems('Ashmolean', 'en');
 
-        self::assertCount(1, $this->requests);
+        self::assertCount(1, $this->wikidata->requests);
     }
 
     #[Test]
@@ -79,8 +73,8 @@ final class WikidataClientTest extends UnitTestCase
 
         $client->getEntities(array_map(static fn(int $n): string => 'Q' . $n, range(1, 120)), 'en');
 
-        self::assertCount(3, $this->requests);
-        self::assertStringContainsString('languages=en', $this->requests[0]['uri']);
+        self::assertCount(3, $this->wikidata->requests);
+        self::assertStringContainsString('languages=en', $this->wikidata->requests[0]['uri']);
     }
 
     #[Test]
@@ -97,7 +91,7 @@ final class WikidataClientTest extends UnitTestCase
         $labels = $this->client([$this->fixture('labels.json')])->getLabels(['Q471406', 'Q20986484', 'Q99999999'], 'de');
 
         self::assertSame(['Q471406' => 'Elias Ashmole', 'Q20986484' => 'Oxford', 'Q99999999' => 'Q99999999'], $labels);
-        self::assertStringContainsString('languages=de%7Cen', $this->requests[0]['uri']);
+        self::assertStringContainsString('languages=de%7Cen', $this->wikidata->requests[0]['uri']);
     }
 
     #[Test]
@@ -149,27 +143,12 @@ final class WikidataClientTest extends UnitTestCase
      */
     private function client(array $answers): WikidataClient
     {
-        $requestFactory = $this->createStub(RequestFactory::class);
-        $requestFactory->method('request')->willReturnCallback(function (string $uri, string $method = 'GET', array $options = []) use (&$answers): ResponseInterface {
-            $this->requests[] = ['uri' => $uri, 'options' => $options];
-            $answer = array_shift($answers) ?? throw new \LogicException('Unexpected request ' . $uri);
-            if ($answer instanceof \Throwable) {
-                throw $answer;
-            }
-            return $answer;
-        });
-        $extensionConfiguration = $this->createStub(ExtensionConfiguration::class);
-        $extensionConfiguration->method('get')->willReturn([
-            'contactUrl' => 'https://github.com/dkd-dobberkau/typo3-provenance-wikidata',
-            'cacheLifetime' => '86400',
-            'timeout' => '5',
-        ]);
-
-        return new WikidataClient($requestFactory, new VariableFrontend('test', new TransientMemoryBackend()), $extensionConfiguration);
+        $this->wikidata = new FakeWikidata($answers);
+        return $this->wikidata->client($this);
     }
 
     private function fixture(string $name): Response
     {
-        return new Response(200, ['Content-Type' => 'application/json'], (string)file_get_contents(__DIR__ . '/../Fixtures/' . $name));
+        return FakeWikidata::fixture($name);
     }
 }
