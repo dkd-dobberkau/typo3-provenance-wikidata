@@ -109,6 +109,16 @@ final class StatementPresenterTest extends UnitTestCase
     }
 
     #[Test]
+    public function identifiersAndMediaFilesAreLeftOut(): void
+    {
+        $properties = array_column($this->edgeCases()['rows'], 'property');
+
+        self::assertNotContains('P214', $properties, 'external identifier');
+        self::assertNotContains('P18', $properties, 'Commons media file');
+        self::assertContains('P856', $properties, 'URLs stay');
+    }
+
+    #[Test]
     public function otherValuesAreShownAsText(): void
     {
         $result = $this->edgeCases();

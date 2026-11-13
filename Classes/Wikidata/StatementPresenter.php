@@ -16,6 +16,8 @@ final class StatementPresenter
     private const ENTITY = 'http://www.wikidata.org/entity/';
     private const REFERENCE_URL = 'P854';
     private const RANKS = ['preferred' => 0, 'normal' => 1];
+    // Identifiers in other databases and image file names state nothing a fact would.
+    private const HIDDEN_DATATYPES = ['external-id', 'commonsMedia'];
 
     public function __construct(private readonly WikidataClient $client) {}
 
@@ -62,7 +64,7 @@ final class StatementPresenter
      */
     private function isShown(array $snak): bool
     {
-        if (($snak['snaktype'] ?? '') !== 'value') {
+        if (($snak['snaktype'] ?? '') !== 'value' || in_array($snak['datatype'] ?? '', self::HIDDEN_DATATYPES, true)) {
             return false;
         }
 

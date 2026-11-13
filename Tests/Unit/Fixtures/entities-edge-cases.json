@@ -230,6 +230,38 @@
       "rank": "normal",
       "id": "Q1$x"
      }
+    ],
+    "P214": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P214",
+       "datatype": "external-id",
+       "datavalue": {
+        "value": "153027283",
+        "type": "string"
+       }
+      },
+      "type": "statement",
+      "rank": "normal",
+      "id": "Q1$y"
+     }
+    ],
+    "P18": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P18",
+       "datatype": "commonsMedia",
+       "datavalue": {
+        "value": "Example.jpg",
+        "type": "string"
+       }
+      },
+      "type": "statement",
+      "rank": "normal",
+      "id": "Q1$y"
+     }
     ]
    }
   }
