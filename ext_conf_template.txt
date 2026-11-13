@@ -1,0 +1,6 @@
+# cat=wikidata; type=string; label=Contact URL: Sent in the User-Agent of every Wikidata request, as the Wikimedia User-Agent policy asks. Use a page or address where the site operator can be reached.
+contactUrl = https://github.com/dkd-dobberkau/typo3-provenance-wikidata
+# cat=wikidata; type=int+; label=Cache lifetime: Seconds Wikidata answers are kept.
+cacheLifetime = 86400
+# cat=wikidata; type=string; label=Timeout: Seconds to wait for Wikidata before the panel reports that it is not reachable.
+timeout = 5

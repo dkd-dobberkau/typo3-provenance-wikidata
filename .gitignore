@@ -1,0 +1,9 @@
+/vendor/
+/public/
+/var/
+composer.lock
+.DS_Store
+.idea/
+.vscode/
+.playwright-mcp/
+/.Build/

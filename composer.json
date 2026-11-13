@@ -1,0 +1,82 @@
+{
+    "name": "cms-provenance/provenance-wikidata",
+    "type": "typo3-cms-extension",
+    "description": "Research Content Provenance facts in Wikidata from the fact dialog of the rich text editor.",
+    "license": "GPL-2.0-or-later",
+    "homepage": "https://cms-provenance.org",
+    "keywords": [
+        "TYPO3",
+        "extension",
+        "provenance",
+        "content-provenance",
+        "wikidata"
+    ],
+    "support": {
+        "issues": "https://github.com/dkd-dobberkau/typo3-provenance-wikidata/issues",
+        "source": "https://github.com/dkd-dobberkau/typo3-provenance-wikidata"
+    },
+    "require": {
+        "php": "^8.2",
+        "cms-provenance/provenance-facts": "^0.1@dev",
+        "typo3/cms-backend": "^13.4 || ^14.0",
+        "typo3/cms-core": "^13.4 || ^14.0",
+        "typo3/cms-rte-ckeditor": "^13.4 || ^14.0"
+    },
+    "require-dev": {
+        "typo3/testing-framework": "^9.7",
+        "typo3/cms-fluid": "^13.4 || ^14.0",
+        "typo3/cms-frontend": "^13.4 || ^14.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/dkd-dobberkau/typo3-provenance"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/dkd-dobberkau/typo3-provenance-facts"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CmsProvenance\\ProvenanceWikidata\\": "Classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CmsProvenance\\ProvenanceWikidata\\Tests\\": "Tests/"
+        }
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin",
+        "sort-packages": true,
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "provenance_wikidata",
+            "version": "0.0.0",
+            "Package": {
+                "providesPackages": {}
+            },
+            "web-dir": ".Build/public"
+        },
+        "branch-alias": {
+            "dev-main": "0.1.x-dev"
+        }
+    },
+    "scripts": {
+        "test:unit": "phpunit -c Build/phpunit/UnitTests.xml",
+        "test:functional": "phpunit -c Build/phpunit/FunctionalTests.xml",
+        "test": [
+            "@test:unit",
+            "@test:functional"
+        ]
+    }
+}
