@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CmsProvenance\ProvenanceWikidata\Tests\Unit\Wikidata;
+namespace CmsProvenance\ProvenanceWikidata\Tests\Support;
 
 use CmsProvenance\ProvenanceWikidata\Wikidata\WikidataClient;
 use GuzzleHttp\Psr7\Response;
@@ -30,7 +30,7 @@ final class FakeWikidata
 
     public static function fixture(string $name): Response
     {
-        return new Response(200, ['Content-Type' => 'application/json'], (string)file_get_contents(__DIR__ . '/../Fixtures/' . $name));
+        return new Response(200, ['Content-Type' => 'application/json'], (string)file_get_contents(__DIR__ . '/../Unit/Fixtures/' . $name));
     }
 
     public function client(TestCase $test): WikidataClient

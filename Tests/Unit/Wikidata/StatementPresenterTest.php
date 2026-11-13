@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace CmsProvenance\ProvenanceWikidata\Tests\Unit\Wikidata;
 
 use CmsProvenance\ProvenanceWikidata\Wikidata\StatementPresenter;
+use CmsProvenance\ProvenanceWikidata\Tests\Support\FakeWikidata;
 use PHPUnit\Framework\Attributes\Test;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 

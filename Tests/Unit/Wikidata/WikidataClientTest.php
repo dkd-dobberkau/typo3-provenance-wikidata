@@ -9,6 +9,7 @@ use CmsProvenance\ProvenanceWikidata\Wikidata\WikidataUnavailable;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use CmsProvenance\ProvenanceWikidata\Tests\Support\FakeWikidata;
 use PHPUnit\Framework\Attributes\Test;
 use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
