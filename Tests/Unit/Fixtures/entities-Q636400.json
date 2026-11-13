@@ -1,0 +1,512 @@
+{
+ "entities": {
+  "Q636400": {
+   "type": "item",
+   "id": "Q636400",
+   "labels": {
+    "de": {
+     "language": "de",
+     "value": "Ashmolean Museum"
+    },
+    "en": {
+     "language": "en",
+     "value": "Ashmolean Museum"
+    }
+   },
+   "descriptions": {
+    "de": {
+     "language": "de",
+     "value": "Universitätsmuseum in Oxford, Vereinigtes Königreich"
+    },
+    "en": {
+     "language": "en",
+     "value": "museum in Oxford, England, UK"
+    }
+   },
+   "claims": {
+    "P31": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P31",
+       "hash": "18bae8b0e25431039bd27b07ede001bd10606f3e",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 207694,
+         "id": "Q207694"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "id": "Q636400$275d8f1f-40e6-b2f4-fe8f-49a1c583423a",
+      "rank": "normal",
+      "references": [
+       {
+        "hash": "5717511c6ec2f1897cc6ffeaac54fb0b96d1c7d3",
+        "snaks": {
+         "P854": [
+          {
+           "snaktype": "value",
+           "property": "P854",
+           "hash": "16f523ab67bd3b0641b0e1bc4b3e034e9236201f",
+           "datavalue": {
+            "value": "http://www.ashmolean.org/about/",
+            "type": "string"
+           },
+           "datatype": "url"
+          }
+         ]
+        },
+        "snaks-order": [
+         "P854"
+        ]
+       }
+      ]
+     },
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P31",
+       "hash": "a1d972263650e3abcf8a0287a0a050b2c9655261",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 866133,
+         "id": "Q866133"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "id": "Q636400$86859235-9C8B-47A7-B23C-3630CEF615E0",
+      "rank": "normal",
+      "references": [
+       {
+        "hash": "071b9e1d58b0cbcfb66e9f20139cf4e01c1f1924",
+        "snaks": {
+         "P854": [
+          {
+           "snaktype": "value",
+           "property": "P854",
+           "hash": "241924c0380fdc85c1af9bd53562d9313ddce90e",
+           "datavalue": {
+            "value": "https://vocaleyes.co.uk/research/heritage-access-2022/benchmark/",
+            "type": "string"
+           },
+           "datatype": "url"
+          }
+         ],
+         "P813": [
+          {
+           "snaktype": "value",
+           "property": "P813",
+           "hash": "8922e76de82a30a4a03eec8a8f1e30211812e075",
+           "datavalue": {
+            "value": {
+             "time": "+2023-02-08T00:00:00Z",
+             "timezone": 0,
+             "before": 0,
+             "after": 0,
+             "precision": 11,
+             "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+           },
+           "datatype": "time"
+          }
+         ]
+        },
+        "snaks-order": [
+         "P854",
+         "P813"
+        ]
+       }
+      ]
+     }
+    ],
+    "P571": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P571",
+       "hash": "bc967954a8f895cc7272f4242e0d571eeb86369a",
+       "datavalue": {
+        "value": {
+         "time": "+1683-01-01T00:00:00Z",
+         "timezone": 0,
+         "before": 0,
+         "after": 0,
+         "precision": 9,
+         "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+        },
+        "type": "time"
+       },
+       "datatype": "time"
+      },
+      "type": "statement",
+      "id": "Q636400$6C0EF978-BFC7-41B6-8726-5BAD27F35D91",
+      "rank": "normal",
+      "references": [
+       {
+        "hash": "fa278ebfc458360e5aed63d5058cca83c46134f1",
+        "snaks": {
+         "P143": [
+          {
+           "snaktype": "value",
+           "property": "P143",
+           "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+           "datavalue": {
+            "value": {
+             "entity-type": "item",
+             "numeric-id": 328,
+             "id": "Q328"
+            },
+            "type": "wikibase-entityid"
+           },
+           "datatype": "wikibase-item"
+          }
+         ]
+        },
+        "snaks-order": [
+         "P143"
+        ]
+       }
+      ]
+     }
+    ],
+    "P112": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P112",
+       "hash": "2911f03626850bb2cf3cc6537b42b294659218ce",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 471406,
+         "id": "Q471406"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "id": "Q636400$8e6dfa41-404a-1272-5514-8887f5a20412",
+      "rank": "normal",
+      "references": [
+       {
+        "hash": "8643ab7eca02ce20def1941c6cfe8edc0fcfc5c5",
+        "snaks": {
+         "P854": [
+          {
+           "snaktype": "value",
+           "property": "P854",
+           "hash": "be879ab303fbbf4e949bd14121265851e18ece5c",
+           "datavalue": {
+            "value": "http://www.ashmolean.org/about/historyandfuture/",
+            "type": "string"
+           },
+           "datatype": "url"
+          }
+         ]
+        },
+        "snaks-order": [
+         "P854"
+        ]
+       }
+      ]
+     }
+    ],
+    "P131": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P131",
+       "hash": "98baf5641b29d5f3696f388b4fc1a85ecd9f4f68",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 20986484,
+         "id": "Q20986484"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "id": "Q636400$9818822D-467E-4995-B327-75D872F84F0A",
+      "rank": "normal"
+     }
+    ],
+    "P276": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P276",
+       "hash": "d632f45d2ccc61fcefd1fbb4dcf6d314026fc00c",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 4877597,
+         "id": "Q4877597"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "id": "Q636400$6D5BC3AD-8275-405D-B929-AACCC19088A4",
+      "rank": "normal",
+      "references": [
+       {
+        "hash": "e38cb688558131e718564f7c40b735a7d710ea72",
+        "snaks": {
+         "P143": [
+          {
+           "snaktype": "value",
+           "property": "P143",
+           "hash": "e4f6d9441d0600513c4533c672b5ab472dc73694",
+           "datavalue": {
+            "value": {
+             "entity-type": "item",
+             "numeric-id": 328,
+             "id": "Q328"
+            },
+            "type": "wikibase-entityid"
+           },
+           "datatype": "wikibase-item"
+          }
+         ],
+         "P4656": [
+          {
+           "snaktype": "value",
+           "property": "P4656",
+           "hash": "5ed1bf3e2f4197e87cf5602aaecdfc121bbeb01c",
+           "datavalue": {
+            "value": "https://en.wikipedia.org/w/index.php?title=Ashmolean_Museum&oldid=937338563",
+            "type": "string"
+           },
+           "datatype": "url"
+          }
+         ]
+        },
+        "snaks-order": [
+         "P143",
+         "P4656"
+        ]
+       }
+      ]
+     }
+    ],
+    "P1436": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P1436",
+       "hash": "57eb899d18f6269d8656526caf22902de1095212",
+       "datavalue": {
+        "value": {
+         "amount": "+1000000",
+         "unit": "1"
+        },
+        "type": "quantity"
+       },
+       "datatype": "quantity"
+      },
+      "type": "statement",
+      "id": "Q636400$965041c1-4a38-b31b-a4fb-3b164adba25b",
+      "rank": "normal",
+      "references": [
+       {
+        "hash": "b424bdc0b29ad1b8757c5d2864abb177a15210b3",
+        "snaks": {
+         "P854": [
+          {
+           "snaktype": "value",
+           "property": "P854",
+           "hash": "fbced27d04d2f5dbf176deb8e8cf5a86f2e669c5",
+           "datavalue": {
+            "value": "https://www.slideshare.net/mccarthymadsen/introduction-to-the-oxford-collections-visualization-project",
+            "type": "string"
+           },
+           "datatype": "url"
+          }
+         ],
+         "P813": [
+          {
+           "snaktype": "value",
+           "property": "P813",
+           "hash": "6241e0fdd3bfffd38e64b0476d3efbd0d0f8e09a",
+           "datavalue": {
+            "value": {
+             "time": "+2017-12-07T00:00:00Z",
+             "timezone": 0,
+             "before": 0,
+             "after": 0,
+             "precision": 11,
+             "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+           },
+           "datatype": "time"
+          }
+         ],
+         "P1476": [
+          {
+           "snaktype": "value",
+           "property": "P1476",
+           "hash": "de1db96e26d2e2d7897b3221a1c940c2bddf4a50",
+           "datavalue": {
+            "value": {
+             "text": "Introduction to the Oxford Collections Visualization Project",
+             "language": "en"
+            },
+            "type": "monolingualtext"
+           },
+           "datatype": "monolingualtext"
+          }
+         ]
+        },
+        "snaks-order": [
+         "P854",
+         "P813",
+         "P1476"
+        ]
+       }
+      ]
+     }
+    ],
+    "P856": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P856",
+       "hash": "c2d56343ce71b341143bcb46d074bf077063a667",
+       "datavalue": {
+        "value": "https://www.ashmolean.org/",
+        "type": "string"
+       },
+       "datatype": "url"
+      },
+      "type": "statement",
+      "id": "Q636400$9A4E1CD3-F99C-4DCC-BAB8-FAB3F1F2E389",
+      "rank": "normal",
+      "references": [
+       {
+        "hash": "96ae24d7cbdd3ef470b080661ad362444497c20a",
+        "snaks": {
+         "P854": [
+          {
+           "snaktype": "value",
+           "property": "P854",
+           "hash": "241924c0380fdc85c1af9bd53562d9313ddce90e",
+           "datavalue": {
+            "value": "https://vocaleyes.co.uk/research/heritage-access-2022/benchmark/",
+            "type": "string"
+           },
+           "datatype": "url"
+          }
+         ],
+         "P813": [
+          {
+           "snaktype": "value",
+           "property": "P813",
+           "hash": "05eb7264c1411a9b348b772c525ed280d785d3fe",
+           "datavalue": {
+            "value": {
+             "time": "+2023-02-09T00:00:00Z",
+             "timezone": 0,
+             "before": 0,
+             "after": 0,
+             "precision": 11,
+             "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+            },
+            "type": "time"
+           },
+           "datatype": "time"
+          }
+         ]
+        },
+        "snaks-order": [
+         "P854",
+         "P813"
+        ]
+       }
+      ]
+     }
+    ],
+    "P625": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P625",
+       "hash": "25a1a1558b06c6455a7ce06d0108244ba800be60",
+       "datavalue": {
+        "value": {
+         "latitude": 51.75556,
+         "longitude": -1.26056,
+         "altitude": null,
+         "precision": 0.0001,
+         "globe": "http://www.wikidata.org/entity/Q2"
+        },
+        "type": "globecoordinate"
+       },
+       "datatype": "globe-coordinate"
+      },
+      "type": "statement",
+      "id": "q636400$98669115-0604-4B95-9C30-60B626DD1ABB",
+      "rank": "normal",
+      "references": [
+       {
+        "hash": "732ec1c90a6f0694c7db9a71bf09fe7f2b674172",
+        "snaks": {
+         "P143": [
+          {
+           "snaktype": "value",
+           "property": "P143",
+           "hash": "9123b0de1cc9c3954366ba797d598e4e1ea4146f",
+           "datavalue": {
+            "value": {
+             "entity-type": "item",
+             "numeric-id": 10000,
+             "id": "Q10000"
+            },
+            "type": "wikibase-entityid"
+           },
+           "datatype": "wikibase-item"
+          }
+         ]
+        },
+        "snaks-order": [
+         "P143"
+        ]
+       }
+      ]
+     }
+    ],
+    "P18": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P18",
+       "hash": "da17131273de537d1e2e4fb241c00e0e07ffdadd",
+       "datavalue": {
+        "value": "Ashmolean Museum in July 2014.jpg",
+        "type": "string"
+       },
+       "datatype": "commonsMedia"
+      },
+      "type": "statement",
+      "id": "Q636400$57C67D63-52D9-4E80-8DC2-9E985670D913",
+      "rank": "normal"
+     }
+    ]
+   }
+  }
+ },
+ "success": 1
+}

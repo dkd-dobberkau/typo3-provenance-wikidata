@@ -1,0 +1,236 @@
+{
+ "entities": {
+  "Q207694": {
+   "type": "item",
+   "id": "Q207694",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "art museum"
+    },
+    "de": {
+     "language": "de",
+     "value": "Kunstmuseum"
+    }
+   }
+  },
+  "Q866133": {
+   "type": "item",
+   "id": "Q866133",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "university museum"
+    },
+    "de": {
+     "language": "de",
+     "value": "Universitätsmuseum"
+    }
+   }
+  },
+  "Q471406": {
+   "type": "item",
+   "id": "Q471406",
+   "labels": {
+    "de": {
+     "language": "de",
+     "value": "Elias Ashmole"
+    },
+    "en": {
+     "language": "en",
+     "value": "Elias Ashmole"
+    }
+   }
+  },
+  "Q20986484": {
+   "type": "item",
+   "id": "Q20986484",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "Oxford"
+    }
+   }
+  },
+  "Q4877597": {
+   "type": "item",
+   "id": "Q4877597",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "Beaumont Street"
+    },
+    "de": {
+     "language": "de",
+     "value": "Beaumont Straße"
+    }
+   }
+  },
+  "P31": {
+   "type": "property",
+   "datatype": "wikibase-item",
+   "id": "P31",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "instance of"
+    },
+    "de": {
+     "language": "de",
+     "value": "ist ein(e)"
+    }
+   }
+  },
+  "P571": {
+   "type": "property",
+   "datatype": "time",
+   "id": "P571",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "inception"
+    },
+    "de": {
+     "language": "de",
+     "value": "Datum der Gründung, Entstehung, Erbauung"
+    }
+   }
+  },
+  "P112": {
+   "type": "property",
+   "datatype": "wikibase-item",
+   "id": "P112",
+   "labels": {
+    "de": {
+     "language": "de",
+     "value": "Gründer"
+    },
+    "en": {
+     "language": "en",
+     "value": "founder"
+    }
+   }
+  },
+  "P131": {
+   "type": "property",
+   "datatype": "wikibase-item",
+   "id": "P131",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "located in the administrative territorial entity"
+    },
+    "de": {
+     "language": "de",
+     "value": "liegt in der Verwaltungseinheit"
+    }
+   }
+  },
+  "P276": {
+   "type": "property",
+   "datatype": "wikibase-item",
+   "id": "P276",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "location"
+    },
+    "de": {
+     "language": "de",
+     "value": "Ort"
+    }
+   }
+  },
+  "P1436": {
+   "type": "property",
+   "datatype": "quantity",
+   "id": "P1436",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "collection or exhibition size"
+    },
+    "de": {
+     "language": "de",
+     "value": "Größe der Sammlung oder Ausstellung"
+    }
+   }
+  },
+  "P856": {
+   "type": "property",
+   "datatype": "url",
+   "id": "P856",
+   "labels": {
+    "de": {
+     "language": "de",
+     "value": "offizielle Website"
+    },
+    "en": {
+     "language": "en",
+     "value": "official website"
+    }
+   }
+  },
+  "P625": {
+   "type": "property",
+   "datatype": "globe-coordinate",
+   "id": "P625",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "coordinate location"
+    },
+    "de": {
+     "language": "de",
+     "value": "geographische Koordinaten"
+    }
+   }
+  },
+  "P18": {
+   "type": "property",
+   "datatype": "commonsMedia",
+   "id": "P18",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "image"
+    },
+    "de": {
+     "language": "de",
+     "value": "Bild"
+    }
+   }
+  },
+  "P854": {
+   "type": "property",
+   "datatype": "url",
+   "id": "P854",
+   "labels": {
+    "de": {
+     "language": "de",
+     "value": "URL der Fundstelle"
+    },
+    "en": {
+     "language": "en",
+     "value": "reference URL"
+    }
+   }
+  },
+  "P143": {
+   "type": "property",
+   "datatype": "wikibase-item",
+   "id": "P143",
+   "labels": {
+    "de": {
+     "language": "de",
+     "value": "importiert aus Wikimedia-Projekt"
+    },
+    "en": {
+     "language": "en",
+     "value": "imported from Wikimedia project"
+    }
+   }
+  }
+ },
+ "success": 1
+}
