@@ -155,7 +155,27 @@
       },
       "type": "statement",
       "rank": "normal",
-      "id": "Q1$x"
+      "id": "Q1$x",
+      "references": [
+       {
+        "snaks": {
+         "P854": [
+          {
+           "snaktype": "value",
+           "property": "P854",
+           "datatype": "url",
+           "datavalue": {
+            "value": "https://exa mple.org/broken",
+            "type": "string"
+           }
+          }
+         ]
+        },
+        "snaks-order": [
+         "P854"
+        ]
+       }
+      ]
      }
     ],
     "P2048": [
@@ -261,6 +281,25 @@
       "type": "statement",
       "rank": "normal",
       "id": "Q1$y"
+     }
+    ],
+    "P577": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P577",
+       "datatype": "time",
+       "datavalue": {
+        "value": {
+         "time": "yesterday",
+         "precision": 11
+        },
+        "type": "time"
+       }
+      },
+      "type": "statement",
+      "rank": "normal",
+      "id": "Q1$z"
      }
     ]
    }

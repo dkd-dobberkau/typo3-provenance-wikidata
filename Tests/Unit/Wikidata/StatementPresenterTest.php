@@ -145,6 +145,35 @@ final class StatementPresenterTest extends UnitTestCase
     }
 
     #[Test]
+    public function statementsStayWhenLabelsCannotBeFetched(): void
+    {
+        $this->wikidata = new FakeWikidata([FakeWikidata::fixture('entities-Q636400.json'), new \GuzzleHttp\Psr7\Response(503)]);
+
+        $result = (new StatementPresenter($this->wikidata->client($this)))->rows('Q636400', 'en');
+
+        self::assertSame('Ashmolean Museum', $result['item']['label']);
+        self::assertSame('P112', $this->row($result, 'P112')['propertyLabel']);
+        self::assertSame('Q471406', $this->row($result, 'P112')['value']);
+    }
+
+    #[Test]
+    public function referenceThatIsNoValidUrlIsLeftOut(): void
+    {
+        $row = $this->row($this->edgeCases(), 'P1436');
+
+        self::assertSame('', $row['reference']);
+        self::assertSame('', $row['fill']['sourceUrl']);
+    }
+
+    #[Test]
+    public function malformedTimeIsLeftOut(): void
+    {
+        $values = array_column(array_filter($this->edgeCases()['rows'], static fn(array $row): bool => $row['property'] === 'P577'), 'value');
+
+        self::assertSame([], $values);
+    }
+
+    #[Test]
     public function unknownItemGivesNothing(): void
     {
         $this->wikidata = new FakeWikidata([new \GuzzleHttp\Psr7\Response(200, [], '{"entities": {"Q99999999": {"id": "Q99999999", "missing": ""}}}')]);

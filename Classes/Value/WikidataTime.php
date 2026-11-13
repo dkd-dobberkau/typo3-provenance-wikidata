@@ -52,8 +52,13 @@ final readonly class WikidataTime
             return $this->era(intdiv(abs($this->year), 10) * 10 . 's');
         }
         if ($this->precision === self::CENTURY) {
-            $century = intdiv(abs($this->year) - 1, 100) + 1;
-            return $this->era($century . $this->ordinalSuffix($century) . ' century');
+            return $this->era($this->ordinal($this->span(100)) . ' century');
+        }
+        if ($this->precision === self::MILLENNIUM) {
+            return $this->era($this->ordinal($this->span(1000)) . ' millennium');
+        }
+        if ($this->precision < self::MILLENNIUM) {
+            return $this->era($this->years());
         }
 
         return $this->yearText();
@@ -93,13 +98,39 @@ final readonly class WikidataTime
         return \DateTimeImmutable::createFromFormat('!n', (string)$this->month)->format('F');
     }
 
-    private function ordinalSuffix(int $number): string
+    /**
+     * The century or millennium a year falls in, counted as Wikidata counts:
+     * 1700 is in the 17th century, 1750 in the 18th.
+     */
+    private function span(int $length): int
     {
-        if (in_array($number % 100, [11, 12, 13], true)) {
-            return 'th';
+        return intdiv(abs($this->year) - 1, $length) + 1;
+    }
+
+    /**
+     * Below millennium precision Wikidata gives a number of years, rounded to
+     * the precision: 10000 years at precision 5, 14 billion at precision 0.
+     */
+    private function years(): string
+    {
+        $unit = 10 ** (self::YEAR - max(0, $this->precision));
+        $years = (int)round(abs($this->year) / $unit) * $unit;
+        foreach ([1_000_000_000 => 'billion', 1_000_000 => 'million'] as $size => $word) {
+            if ($years >= $size) {
+                return round($years / $size, 3) . ' ' . $word . ' years';
+            }
         }
 
-        return match ($number % 10) {
+        return $years . ' years';
+    }
+
+    private function ordinal(int $number): string
+    {
+        if (in_array($number % 100, [11, 12, 13], true)) {
+            return $number . 'th';
+        }
+
+        return $number . match ($number % 10) {
             1 => 'st',
             2 => 'nd',
             3 => 'rd',

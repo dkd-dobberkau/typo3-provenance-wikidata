@@ -85,12 +85,16 @@ export default function wikidataLookup({ panel, fill }) {
     }
   };
 
+  let latestPick = 0;
   const pick = async (item) => {
+    const current = ++latestPick;
     results.replaceChildren();
     input.value = item.label;
     fill({ subject: item.uri });
     statements.replaceChildren(element('div', 'text-body-secondary', `Loading statements of ${item.label} …`));
     const answer = await request('provenance_wikidata_statements', { item: item.id });
+    // A later pick wins, so statements always belong to the subject in the form.
+    if (current !== latestPick) return;
     statements.replaceChildren();
     if (answer === null) return;
     showMessage('');

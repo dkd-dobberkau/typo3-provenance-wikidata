@@ -28,7 +28,10 @@ final class WikidataTimeTest extends UnitTestCase
             'first century' => ['+0050-00-00T00:00:00Z', 7, '1st century', '1st century'],
             'twenty-first century' => ['+2001-00-00T00:00:00Z', 7, '21st century', '21st century'],
             'century BCE' => ['-0250-00-00T00:00:00Z', 7, '3rd century BCE', '3rd century BCE'],
-            'millennium and coarser' => ['-3800-00-00T00:00:00Z', 6, '3800 BCE', '3800 BCE'],
+            'millennium, as Wikidata formats it' => ['+2000-00-00T00:00:00Z', 6, '2nd millennium', '2nd millennium'],
+            'millennium BCE' => ['-3800-00-00T00:00:00Z', 6, '4th millennium BCE', '4th millennium BCE'],
+            'ten thousand years' => ['-10000-00-00T00:00:00Z', 5, '10000 years BCE', '10000 years BCE'],
+            'billions of years' => ['-13798000000-00-00T00:00:00Z', 0, '14 billion years BCE', '14 billion years BCE'],
         ];
     }
 

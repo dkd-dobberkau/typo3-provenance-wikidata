@@ -42,10 +42,19 @@ final class StatementPresenter
             }
         }
 
-        $labels = $this->client->getLabels($this->referencedIds($statements), $language);
+        try {
+            $labels = $this->client->getLabels($this->referencedIds($statements), $language);
+        } catch (WikidataUnavailable) {
+            // Labels only make the rows readable; the ids stand in for them.
+            $labels = [];
+        }
         $rows = [];
         foreach ($statements as [$property, $statement]) {
-            $rows[] = $this->row($property, $statement, $labels);
+            try {
+                $rows[] = $this->row($property, $statement, $labels);
+            } catch (\InvalidArgumentException) {
+                // A value Wikidata stores in a form this extension does not read.
+            }
         }
 
         return [
@@ -154,7 +163,7 @@ final class StatementPresenter
         foreach ($statement['references'] ?? [] as $reference) {
             foreach ($reference['snaks'][self::REFERENCE_URL] ?? [] as $snak) {
                 $url = $snak['datavalue']['value'] ?? null;
-                if (is_string($url) && preg_match('#^https?://#', $url) === 1) {
+                if (is_string($url) && preg_match('#^https?://#', $url) === 1 && filter_var($url, FILTER_VALIDATE_URL) !== false) {
                     return $url;
                 }
             }
